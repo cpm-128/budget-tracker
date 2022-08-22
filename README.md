@@ -34,8 +34,8 @@ THEN the deposits or expenses added while they were offline are added to their t
 - Run the command _node server.js_ to launch the application.
 
 ### Tools and Required Packages
-- **IndexedDB** for browser-based offline functionality
-- **Service Worker**
+- **IndexedDB** for browser-based offline storage
+- **Service Worker** for offline functionality of the chached application
 - **Express.js**
 - **MongoDB** as its database
 - **MongoDB Atlast** for **Heroku** deployment

@@ -43,7 +43,22 @@
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <script src="js/index.js"></script>
+
   <!-- connect to idb.js file for offline storage -->
   <script src="./js/idb.js"></script>
+
 </body>
+
+  <!-- tell the browser to use a service worker and where to find that code -->
+  <script>
+    (function() {
+      if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./service-worker.js')
+          .then(() => console.log('>> Service Worker registered successfully. <<'))
+          .catch(error => console.log('>> Service Worker registration FAILED. >> ', error));
+      }
+    })
+    ();
+  </script>
+
 </html>
