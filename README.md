@@ -34,7 +34,7 @@ THEN the deposits or expenses added while they were offline are added to their t
 - Run the command _node server.js_ to launch the application.
 
 ### Tools and Required Packages
-- **IndexedDB** for offline functionality
+- **IndexedDB** for browser-based offline functionality
 - **Service Worker**
 - **Express.js**
 - **MongoDB** as its database
