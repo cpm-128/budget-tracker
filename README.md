@@ -5,9 +5,9 @@
 A budget tracker application that allows for offline acces and functionality. Users are able to add expenses and deposits to their budget with or without a connection. When users enter transactions offline, that total is updated once a connection is re-established.
 
 ### User Story
-AS AN avid traveler
-I WANT to be able to track my withdrawals and deposits with or without a data/internet connection
-SO THAT my account balance is accurate when I am traveling
+AS AN avid traveler<br>
+I WANT to be able to track my withdrawals and deposits with or without a data/internet connection<br>
+SO THAT my account balance is accurate when I am traveling<br>
 
 ## Table of Contents
 - <a href="#acceptance-criteria">Acceptance Criteria</a>
@@ -48,7 +48,7 @@ To access a community of tech professionals who share blog posts of new informat
 <img src="./images/mockup/application.png">
 
 ## Deployed Application
-Deployed url: TBD<br>
+Deployed url: https://gentle-peak-28178.herokuapp.com/<br>
 Repo url: https://github.com/cpm-128/budget-tracker
 
 ### Screencapture
