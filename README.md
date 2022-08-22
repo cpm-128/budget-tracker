@@ -2,7 +2,7 @@
 <a href="#license"><img src="https://img.shields.io/badge/license-mit-informational"></img></a>
 
 ## Description
-A budget tracket application that allows for offline acces and functionality. Users are able to add expenses and deposits to their budget with or without a connection. When users enter transactions offline, that total is updated once a connection is re-established.
+A budget tracker application that allows for offline acces and functionality. Users are able to add expenses and deposits to their budget with or without a connection. When users enter transactions offline, that total is updated once a connection is re-established.
 
 ### User Story
 AS AN avid traveler
@@ -39,6 +39,7 @@ THEN the deposits or expenses added while they were offline are added to their t
 - **Express.js**
 - **MongoDB** as its database
 - **MongoDB Atlast** for **Heroku** deployment
+- **Web Manifest** as the blueprint for the Progressive Web Application
 
 ## Usage
 To access a community of tech professionals who share blog posts of new information or technologies and commentary on the blogs.
