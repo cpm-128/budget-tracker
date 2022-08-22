@@ -1,5 +1,5 @@
 # Budget Tracker
-<a href="#license"><img src="https://img.shields.io/badge/license-mit-informational"></img></a>
+<a href="#license"><img src="https://img.shields.io/badge/license-mit-informational"></a>
 
 ## Description
 A budget tracker application that allows for offline acces and functionality. Users are able to add expenses and deposits to their budget with or without a connection. When users enter transactions offline, that total is updated once a connection is re-established.
