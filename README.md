@@ -1,4 +1,4 @@
-# BUDGET TRACKER
+# Budget Tracker
 <a href="#license"><img src="https://img.shields.io/badge/license-mit-informational"></a>
 
 ## Description
