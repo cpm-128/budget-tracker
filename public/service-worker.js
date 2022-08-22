@@ -1,6 +1,7 @@
 const APP_PREFIX = 'BudgetTracker-';
 const VERSION = 'version_01';
 const CACHE_NAME = APP_PREFIX + VERSION;
+const DATA_CACHE_NAME = 'data-cache-v1';
 
 // DEFINE which files to cache
 const FILES_TO_CACHE = [
@@ -48,16 +49,40 @@ self.addEventListener('activate', function (e) {
 
 // FETCH the browser should check the cache when there is not network connection
 self.addEventListener('fetch', function (e) {
-    console.log('>> fetch request >> ' + e.request.url)
-    e.respondWith(
-        caches.match(e.request).then(function (request) {
-            if (request) {
-                console.log('>> responding with cache >> ' + e.request.url)
-                return request
-            } else {
-                console.log('>> file is not cached, fetching >> ' + e.request.url)
+    // only if api is in the url, open the cache to allow it to fetch the event request. then clone  the response
+    if (e.request.url.includes('/api/')) {
+        console.log('>> fetch request >> ' + e.request.url)
+        e.respondWith(
+            caches.open(DATA_CACHE_NAME).then(cache => {
                 return fetch(e.request)
-            }
+                    .then(response => {
+                        // clone response and store in cache
+                        if (response.status === 200) {
+                            cache.put(e.request.url, response.clone());
+                        }
+                        return response;
+                    })
+                    .catch(err => {
+                        // request failed, retrieve from cache
+                        return cache.match(e.request);
+                    });
+            })
+            .catch(err => console.log(err))
+        );
+        return;
+    }
+
+    e.respondWith(
+        fetch(e.request).catch(function () {
+            return caches.match(e.request).then(function (response) {
+                if (response) {
+                    return response
+                } else if (e.request.headers.get('accept').includes('text/html')) {
+                    // return the cached index.html for all requests for all html pages
+                    return caches.match('/');
+                }
+            });
+
         })
-    )
-})
+    );
+});
