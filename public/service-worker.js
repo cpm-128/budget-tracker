@@ -18,3 +18,21 @@ self.addEventListener('install', function (e) {
         })
     )
 })
+
+// ACTIVATE the service worker, clearing out any old data from cache and tell service worker how to manage caches
+self.addEventListener('activate', function (e) {
+    e.waitUntil(
+        caches.keys().then(function (keyList) {
+            let cacheKeeplist = keyList.filter(function (key) {
+                return key.indexOf(APP_PREFIX);
+            });
+            cacheKeeplist.push(CACHE_NAME);
+            return Promise.all(keyList.map(function (key, i) {
+                if (cacheKeeplist.indexOf(key) === -1) {
+                    console.log('>> deleting cache >> ' + keyList[i] );
+                    return caches.delete(keyList[i]);
+                }
+            }));
+        })
+    );
+});
