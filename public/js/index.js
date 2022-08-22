@@ -137,6 +137,7 @@ function sendTransaction(isAdding) {
   .catch(err => {
     // fetch failed, so save in indexed db
     console.log('fetch failed, saved to indexedDB >>', err);
+    // the idb.js function is available through the public/js script on the html page
     saveRecord(transaction);
 
     // clear form
