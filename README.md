@@ -52,7 +52,7 @@ Deployed url: https://gentle-peak-28178.herokuapp.com/<br>
 Repo url: https://github.com/cpm-128/budget-tracker
 
 ### Screencapture
-<img src="">
+<img src="./images/deployed_budget-tracker.png">
 
 ## Contributors
 <a href="https://github.com/coding-boot-camp/symmetrical-bassoon" target="_blank">Starter code provided by UNC Chapel Hill Bootcamp.</a>
